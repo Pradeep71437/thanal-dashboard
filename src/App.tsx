@@ -1,23 +1,23 @@
-import React from 'react';
-import { ThemeProvider } from './contexts/ThemeContext';
-import Sidebar from './components/Sidebar';
-import Header from './components/Header';
-import StatsCard from './components/StatsCard';
-import LeadStatusCard from './components/LeadStatusCard';
-import QuickActionsCard from './components/QuickActionsCard';
-import TodaysScheduleCard from './components/TodaysScheduleCard';
-import ChartCard from './components/ChartCard';
-import { STATS_CARDS, CHART_DATA } from './constants/dashboardData';
+import React from "react";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import Sidebar from "./components/Sidebar";
+import Header from "./components/Header";
+import StatsCard from "./components/StatsCard";
+import LeadStatusCard from "./components/LeadStatusCard";
+import QuickActionsCard from "./components/QuickActionsCard";
+import TodaysScheduleCard from "./components/TodaysScheduleCard";
+import ChartCard from "./components/ChartCard";
+import { STATS_CARDS, CHART_DATA } from "./constants/dashboardData";
 
 function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
         <Sidebar />
-        
+
         <div className="ml-64">
           <Header />
-          
+
           <main className="p-6">
             {/* Stats Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -25,14 +25,14 @@ function App() {
                 <StatsCard key={card.id} {...card} />
               ))}
             </div>
-            
+
             {/* Middle Section */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
               <LeadStatusCard />
               <QuickActionsCard />
               <TodaysScheduleCard />
             </div>
-            
+
             {/* Charts Section */}
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
               <ChartCard
