@@ -32,7 +32,11 @@ const StatsCard = ({
             {value}
           </p>
           <div className="flex items-center space-x-2">
-            <div className={`flex items-center space-x-1 ${changeColor}`}>
+            <div
+              className={`flex items-center space-x-1 ${
+                trend === "up" ? changeColor : "text-red-500"
+              }`}
+            >
               <TrendIcon className="w-3 h-3" />
               <span className="text-sm font-medium">{change}</span>
             </div>
@@ -45,7 +49,7 @@ const StatsCard = ({
           className={`w-12 h-12 rounded-lg flex items-center justify-center ${iconbgColor} dark:opacity-80`}
         >
           <div className={`w-6 h-6 rounded  ${iconColor}`}>
-            <IconComponent />
+            {IconComponent ? <IconComponent /> : null}
           </div>
         </div>
       </div>
